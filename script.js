@@ -24,7 +24,6 @@ AFRAME.registerComponent("cursor-listener", {
     this.el.addEventListener('click', function() {
            
       this.setAttribute('material', 'color', colorBlue); 
-      document.getElementById('audio').play();
       this.emit("start2");
       this.emit("start3");
       model.emit("start1");
