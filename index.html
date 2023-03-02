@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	</head>
+	<body>
+		<div class="mainUI" id="uiDiv" oncontextmenu="return false;">
+			<div id="uiDivIn" class="regionUI">
+				<div class="buttonUI">
+					<img src="image/enter.png" id="buttonEnter" />
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+		<a-scene 
+		  id="aScene"
+		  visible="false"
+		  embedded arjs="patternRatio: 0.5" 
+			vr-mode-ui="enabled: false">
+			<a-assets id="cameraAAssets" camera="active: false">
+			<a-asset-item id="tree-obj" src="model\wolf-blenderObj\Wolf_obj.obj"></a-asset-item>
+      <a-asset-item id="tree-mtl" src="model\wolf-blenderObj\Wolf_obj.mtl"></a-asset-item>
+			<audio id="audio">
+				<track 
+				  kind="subtitles"
+				  src="audio\FrankSinatra-MyWay.mp3.srt" 
+				  srclang="en" 
+					label="English subtitles"
+					default/>
+					<source src="audio/FrankSinatra-MyWay.mp3" type="audio/mpeg">
+					<source src="audio/test.ogg" type="audio/ogg">
+					<source src="audio/test.mp3" type="audio/mpeg">
+					<source src="audio/test.mp4" type="audio/mpeg">
+				</audio>
+				<image id="buttonPlay" src="image/buttonPlay.png"></image>
+			</a-assets>
+			<a-marker  type="pattern" url="pattern\pattern-anons-46.patt">
+				<a-entity
+			    cursor="fuse: false; rayOrigin: mouse"
+			    raycaster="objects: .data-raycastable">
+				  <a-image 
+				    cursor-listener
+				    class="data-raycastable"
+				    id="imageButtonPlay"
+				    position="0 1 1"
+				    scale="1.5 1.5 1.5"
+				    src="#buttonPlay"
+					  animation__01="property: scale; to: 1.9 1.9 1.9;  dur: 200; startEvents: start2"
+					  animation__02="property: scale; to: 0 0 0; delay: 200; dur: 250; startEvents: start3"></a-image>
+					<a-entity 
+				    entityModel
+				    rotation="0 -90 0"
+				    id="modelID"
+					  position="0 0 0"
+					  scale="3 3 3"
+					  gltf-model="model/scene.gltf"
+					  animation="property: rotation; to: 0 270 0; delay: 450; dur: 4000; startEvents: start1; pauseEvents: pause1; resumeEvents: resume1"></a-entity>
+				</a-entity>
+			</a-marker>
+			<a-entity 
+			  cameraAScene 
+				class="classForCamera"
+				camera="active: true">
+		  </a-entity>
+		</a-scene>
+		<div>
+			<button onclick="document.getElementById('audio').play()">Воспроизведение</button>
+			<button onclick="document.getElementById('audio').pause()">Пауза</button>
+			<button onclick="document.getElementById('audio').volume+=0.1">Громкость +</button>
+			<button onclick="document.getElementById('audio').volume-=0.1">Громкость -</button>
+		</div> 
+	</body>
+</html>
