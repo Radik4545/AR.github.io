@@ -20,7 +20,7 @@
 .regionUI
 {
     position: fixed; 
-    width: 100px;
+    width: 300px;
     height: 440px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
