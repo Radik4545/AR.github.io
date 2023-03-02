@@ -23,13 +23,10 @@
 		  embedded arjs="patternRatio: 0.5" 
 			vr-mode-ui="enabled: false">
 			<a-assets id="cameraAAssets" camera="active: false">
-			<audio id="audio">
-				<source src="FrankSinatra-MyWay.mp3" type="audio/mpeg">
-				</audio>
-				<image id="buttonPlay" src="buttonPlay.png"></image>
+			<image id="buttonPlay" src="buttonPlay.png"></image>
 			</a-assets>
 			<a-marker  type="pattern" url="pattern-anons-46.patt">
-				<a-entity
+			  <a-entity
 			    cursor="fuse: false; rayOrigin: mouse"
 			    raycaster="objects: .data-raycastable">
 				  <a-image 
