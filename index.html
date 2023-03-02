@@ -24,22 +24,22 @@
 			vr-mode-ui="enabled: false">
 			<a-assets id="cameraAAssets" camera="active: false">
 			<a-asset-item id="tree-obj" src="model\wolf-blenderObj\Wolf_obj.obj"></a-asset-item>
-      <a-asset-item id="tree-mtl" src="model\wolf-blenderObj\Wolf_obj.mtl"></a-asset-item>
+                        <a-asset-item id="tree-mtl" src="model\wolf-blenderObj\Wolf_obj.mtl"></a-asset-item>
 			<audio id="audio">
 				<track 
 				  kind="subtitles"
-				  src="audio\FrankSinatra-MyWay.mp3.srt" 
+				  src="FrankSinatra-MyWay.mp3.srt" 
 				  srclang="en" 
 					label="English subtitles"
 					default/>
-					<source src="audio/FrankSinatra-MyWay.mp3" type="audio/mpeg">
+					<source src="FrankSinatra-MyWay.mp3" type="audio/mpeg">
 					<source src="audio/test.ogg" type="audio/ogg">
 					<source src="audio/test.mp3" type="audio/mpeg">
 					<source src="audio/test.mp4" type="audio/mpeg">
 				</audio>
-				<image id="buttonPlay" src="image/buttonPlay.png"></image>
+				<image id="buttonPlay" src="buttonPlay.png"></image>
 			</a-assets>
-			<a-marker  type="pattern" url="pattern\pattern-anons-46.patt">
+			<a-marker  type="pattern" url="pattern1.patt">
 				<a-entity
 			    cursor="fuse: false; rayOrigin: mouse"
 			    raycaster="objects: .data-raycastable">
@@ -58,7 +58,7 @@
 				    id="modelID"
 					  position="0 0 0"
 					  scale="3 3 3"
-					  gltf-model="model/scene.gltf"
+					  gltf-model="scene.gltf"
 					  animation="property: rotation; to: 0 270 0; delay: 450; dur: 4000; startEvents: start1; pauseEvents: pause1; resumeEvents: resume1"></a-entity>
 				</a-entity>
 			</a-marker>
