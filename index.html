@@ -1,58 +1,104 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-	</head>
-	<body>
-		<div class="mainUI" id="uiDiv" oncontextmenu="return false;">
-			<div id="uiDivIn" class="regionUI">
-				<div class="buttonUI">
-					<img src="enter.png" id="buttonEnter" />
-				</div>
-			</div>
+    <head>
+        <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.min.js"></script>
+    </head>
+    <body id="body" style="margin : 0px; overflow: hidden;">
+	<div class="mainUI" id="uiDiv" oncontextmenu="return false;">
+	    <div style="width: 75%;" class="modal-dialog" id="deleteProductModal" tabindex="-1" role="dialog" aria-labelledby="deleteProductModalLabel">
+		<div class="modal-content">
+		    <div class="modal-header">
+			<h4 class="modal-title" id="deleteProductModalLabel" style="align-items: center;">
+			    <b>Какой-то заголовок</b>
+			</h4>
+		    </div>
+		    <div class="modal-body" style="justify-content: center; text-align: justify;">
+			<h4 class="modal-title"><i>Текст объясняющий что делать</i></h4><br>
+		        <p>
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+		            ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+		            ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			</p><br>
+			<img src="ck9vyTfdgcA.jpg" style="width: 100%; justify-content: center;"><br>
+			<h4 class="modal-title">Возможно что-то</h4><br>
+			<p>
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+		            ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+			    ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA  
+		            ААААААААA АААААААА АААААААА ААААААААA АААААААА АААААААА АААААААА ААААААААA АААААААА ААААААААA
+		        </p>
+		    </div>
+		    <div class="modal-footer">
+			<a id="buttonEnter" href="#" class="butt">OK</a>
+		    </div>
 		</div>
-		<script src="script.js"></script>
-		<a-scene 
-		  id="aScene"
-		  visible="false"
-		  embedded arjs="patternRatio: 0.5" 
-			vr-mode-ui="enabled: false">
-			<a-assets id="cameraAAssets" camera="active: false">
-			<image id="buttonPlay" src="buttonPlay.png"></image>
-			</a-assets>
-			<a-marker  preset='hiro'>
-			  <a-entity
-			    cursor="fuse: false; rayOrigin: mouse"
-			    raycaster="objects: .data-raycastable">
-				  <a-image 
-				    cursor-listener
-				    class="data-raycastable"
-				    id="imageButtonPlay"
-				    position="0 1 1"
-				    scale="1.5 1.5 1.5"
-				    src="#buttonPlay"
-					  animation__01="property: scale; to: 1.9 1.9 1.9;  dur: 200; startEvents: start2"
-					  animation__02="property: scale; to: 0 0 0; delay: 200; dur: 250; startEvents: start3"></a-image>
-					<a-entity 
-				    entityModel
-				    rotation="0 -90 0"
-				    id="modelID"
-					  position="0 0 0"
-					  scale="3 3 3"
-					  gltf-model="scene.gltf"
-					  animation="property: rotation; to: 0 270 0; delay: 450; dur: 4000; startEvents: start1; pauseEvents: pause1; resumeEvents: resume1"></a-entity>
-				</a-entity>
-			</a-marker>
-			<a-entity 
-			  cameraAScene 
-				class="classForCamera"
-				camera="active: true">
-		  </a-entity>
-		</a-scene>
-	</body>
+	    </div>
+	</div>
+	<div id="subtitles"></div>
+	<div id="divImageSoundOnOff">
+	    <img id="buttonSoundOff" src="soundoff.png" class="displayNone">
+	    <img id="buttonSoundOn" src="soundon.png" class="displayNone">
+	</div>
+	<script src="script.js"></script>
+        <a-scene id="aScene" custom-cursor visible="false" embedded arjs="patternRatio: 0.5" vr-mode-ui="enabled: false">
+	    <a-assets id="cameraAAssets" camera="active: false">
+	        <image id="buttonPlay" src="buttonPlay.png"></image>
+	        <audio id="audio">
+                    <source src="FrankSinatra-MyWay.mp3" type="audio/mpeg">
+		    <source src="audio/FrankSinatra-MyWay.ogg" type="audio/ogg">
+		    <source src="audio/FrankSinatra-MyWay.mp3" type="audio/mpeg">
+	    	    <source src="audio/FrankSinatra-MyWay.mp4" type="audio/mpeg">
+	        </audio>
+	    </a-assets>
+	    <a-entity cameraAScene class="classForCamera" camera="active: true"></a-entity>
+	    <a-marker preset='hiro'>
+	        <a-entity id="watcher" collider-check>
+		    <a-entity class="a-scene" id="cursor" cursor="fuse: false; rayOrigin: mouse" raycaster="objects: .data-raycastable"></a-entity>
+	        </a-entity>
+		<a-text id="textLOADING" value="LOADING." color="#BBB" position="-0.7 1.5 0" scale="1.5 1.5 1.5"></a-text>
+		<a-box id="imageLoaded" position="0 0.6 0" scale="0.4 0.4 0.4" rotation="45 45 45" color="black"
+		    animation__04="property: position; to: 0 0.8 0; dir: alternate; dur: 2000; loop: true"
+		    animation__05="property: rotation; to: 360 405 45;  dir: alternate; dur: 2000; loop: true"
+	            animation__06="property: scale; to: 2 2 2; dur: 6000; startEvents: start6">
+		</a-box>
+		<a-image visible="false" cursor-listener id="imageButtonPlay" position="0 1 1" scale="1.5 1.5 1.5" src="#buttonPlay"
+		    animation__02="property: scale; to: 1.9 1.9 1.9;  dur: 200; startEvents: start2"
+	            animation__03="property: scale; to: 0 0 0; delay: 200; dur: 250; startEvents: start3">
+		</a-image>
+                <a-entity visible="false" entityModel id="modelID" position="0 0 0" scale="0.5 0.5 0.5" gltf-model="src: url(myach.glb);"></a-entity>
+	    </a-marker>
+        </a-scene>
+    </body>
 </html>
