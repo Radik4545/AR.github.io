@@ -126,7 +126,6 @@ AFRAME.registerComponent("cursor-listener",
         });
         model.addEventListener("model-loaded",  function () 
         {
-            imageLoaded.emit("start6");
             textLOADING.parentNode.remove(textLOADING);
             setTimeout(() => 
             {
@@ -142,7 +141,6 @@ AFRAME.registerComponent("cursor-listener",
         });
         model.addEventListener("click", function () 
         {
-            console.log("why not");
             this.setAttribute("rotation", "0 -90 0");
             let colorWhite = "white";
             document.getElementById('audio').pause();
