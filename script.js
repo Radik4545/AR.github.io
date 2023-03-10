@@ -1,5 +1,3 @@
-let buttonEnter = document.getElementById("buttonEnter");
-let uiDivIn = document.getElementById("uiDivIn");
 let buttonSoundOn = document.getElementById("buttonSoundOn");
 let buttonSoundOff = document.getElementById("buttonSoundOff");
 let subtitlesTextArr = [
@@ -171,24 +169,3 @@ AFRAME.registerComponent("cursor-listener",
         });  
     }
 })
-let uiDiv = document.getElementById("uiDiv");
-uiDiv.style["pointer-events"] = "auto";
-buttonEnter.style.cursor = "pointer";
-let uiDivImageSoundOnOff = document.getElementById("divImageSoundOnOff");
-let fadeIn = function() 
-{
-    uiDiv.style["pointer-events"] = "none";
-    buttonEnter.parentNode.remove(buttonEnter);
-    uiDiv.style["backdrop-filter"] = "none";
-    uiDiv.style["transition"] = "background-color 1000ms linear";
-    uiDiv.setAttribute("class", "displayNone");
-    let aScene = document.querySelector("#aScene");
-    aScene.setAttribute("visible", "true");
-    uiDivImageSoundOnOff.style["pointer-events"] = "auto";
-    buttonSoundOn.style.cursor = "pointer";
-    buttonSoundOff.style.cursor = "pointer";
-    fadeSwitch();
-}
-
-buttonEnter.addEventListener('touchstart', fadeIn);
-buttonEnter.addEventListener('mousedown',  fadeIn);  
